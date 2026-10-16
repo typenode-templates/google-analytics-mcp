@@ -1,0 +1,172 @@
+{
+  "format": "typenode-mcp-reference-draft",
+  "format_version": "0.1",
+  "status": "local_reference_draft_activation_pending",
+  "slug": "google-analytics-mcp",
+  "version": "0.1.0-draft",
+  "title": "Google Analytics 4 MCP (GA4)",
+  "headline": "Talk to your GA4 traffic, engagement and recorded outcomes in your AI client.",
+  "summary": "Read-only GA4 property discovery, native reports, acquisition presets, recorded events and ordered funnels through 19 Typenode-hosted MCP tools.",
+  "description": "A reusable Google Analytics 4 MCP template for marketing and SEO managers. Official Analytics Admin and Data API reads expose native reporting evidence with compatibility checks and bounded results. The AI client owns interpretation; the server does not change measurement configuration or reconstruct unrecorded business outcomes.",
+  "license": "MIT",
+  "runtime": {
+    "platform": "typenode",
+    "hosting": "customer_workspace",
+    "standalone": false
+  },
+  "distribution": {
+    "contents": "contracts_and_usage_documentation",
+    "implementation_included": false,
+    "activation": "through_typenode",
+    "public_activation_verified": false
+  },
+  "first_use_prompts": [
+    "List the Google Analytics properties I can access.",
+    "For my selected property, show sessions and engagement from Google organic landing pages for the last complete month.",
+    "Show recorded event names before we choose an outcome event to inspect."
+  ],
+  "prerequisites": [
+    "Typenode Workspace with setup and publication access; normal account/billing prerequisites apply.",
+    "Customer-owned Google Cloud project and custom OAuth Web application.",
+    "Enabled APIs: Google Analytics Data API, Google Analytics Admin API.",
+    "Google account with access to each selected reporting property.",
+    "AI client supporting the authenticated Typenode remote MCP endpoint."
+  ],
+  "applications": [
+    {
+      "application_slug": "google-analytics",
+      "description": "A reusable Google Analytics 4 MCP template for marketing and SEO managers. Official Analytics Admin and Data API reads expose native reporting evidence with compatibility checks and bounded results. The AI client owns interpretation; the server does not change measurement configuration or reconstruct unrecorded business outcomes.",
+      "authentication_option_id": "user-oauth",
+      "required_scopes": [
+        "https://www.googleapis.com/auth/analytics.readonly"
+      ],
+      "required_apis": [
+        {
+          "service": "analyticsdata.googleapis.com",
+          "name": "Google Analytics Data API"
+        },
+        {
+          "service": "analyticsadmin.googleapis.com",
+          "name": "Google Analytics Admin API"
+        }
+      ],
+      "setup_guidance": "docs/setup.md"
+    }
+  ],
+  "configuration_requirements": [
+    {
+      "key": "GA4_ACCESS_TOKEN",
+      "kind": "oauth_credential",
+      "required": true,
+      "description": "Renewable OAuth-backed Google connection configured securely in the selected Environment; no credential values are stored here."
+    },
+    {
+      "key": "GA4_CREDENTIAL_CONTEXT",
+      "kind": "environment_configuration",
+      "required": true,
+      "description": "Stable ID of this installation's Google Credential, used to isolate continuation cursors."
+    }
+  ],
+  "tools": [
+    {
+      "name": "list_ga4_properties",
+      "contract": "tools/list_ga4_properties.json"
+    },
+    {
+      "name": "get_ga4_property",
+      "contract": "tools/get_ga4_property.json"
+    },
+    {
+      "name": "list_ga4_data_streams",
+      "contract": "tools/list_ga4_data_streams.json"
+    },
+    {
+      "name": "get_ga4_report_metadata",
+      "contract": "tools/get_ga4_report_metadata.json"
+    },
+    {
+      "name": "list_ga4_key_events",
+      "contract": "tools/list_ga4_key_events.json"
+    },
+    {
+      "name": "check_ga4_report_compatibility",
+      "contract": "tools/check_ga4_report_compatibility.json"
+    },
+    {
+      "name": "query_ga4_report",
+      "contract": "tools/query_ga4_report.json"
+    },
+    {
+      "name": "get_ga4_report_totals",
+      "contract": "tools/get_ga4_report_totals.json"
+    },
+    {
+      "name": "get_ga4_report_time_series",
+      "contract": "tools/get_ga4_report_time_series.json"
+    },
+    {
+      "name": "query_ga4_funnel",
+      "contract": "tools/query_ga4_funnel.json"
+    },
+    {
+      "name": "get_ga4_organic_landing_pages",
+      "contract": "tools/get_ga4_organic_landing_pages.json"
+    },
+    {
+      "name": "get_ga4_landing_page_outcomes",
+      "contract": "tools/get_ga4_landing_page_outcomes.json"
+    },
+    {
+      "name": "get_ga4_channel_acquisition",
+      "contract": "tools/get_ga4_channel_acquisition.json"
+    },
+    {
+      "name": "get_ga4_first_user_acquisition",
+      "contract": "tools/get_ga4_first_user_acquisition.json"
+    },
+    {
+      "name": "get_ga4_event_performance",
+      "contract": "tools/get_ga4_event_performance.json"
+    },
+    {
+      "name": "get_ga4_audience_breakdown",
+      "contract": "tools/get_ga4_audience_breakdown.json"
+    },
+    {
+      "name": "get_ga4_performance_overview",
+      "contract": "tools/get_ga4_performance_overview.json"
+    },
+    {
+      "name": "get_ga4_period_datasets",
+      "contract": "tools/get_ga4_period_datasets.json"
+    },
+    {
+      "name": "get_ga4_property_datasets",
+      "contract": "tools/get_ga4_property_datasets.json"
+    }
+  ],
+  "mcp_server": {
+    "name": "Google Analytics 4",
+    "description": "Read-only GA4 property discovery, native reports, acquisition presets, recorded events and ordered funnels through 19 Typenode-hosted MCP tools."
+  },
+  "guidance": {
+    "setup": "docs/setup.md",
+    "verification": "docs/verification.md",
+    "first_use": "prompts/getting-started.md",
+    "tasks": "prompts/marketing-analysis.md",
+    "combined": "prompts/with-gsc.md",
+    "examples": "examples/README.md"
+  },
+  "success_criteria": [
+    "Fresh client discovery exposes all 19 domain tools.",
+    "Property discovery returns a typed result from the newly configured Google identity.",
+    "A dated report succeeds or returns a legitimate typed empty result for a selected accessible property.",
+    "Continuation/error boundaries match the included schemas and descriptions.",
+    "Provider and client authentication renewal are verified after known expiry before broad promotion."
+  ],
+  "notes": [
+    "Created by Typenode; not affiliated with or endorsed by Google.",
+    "Reference metadata only; not an installer, Workflow export or executable MCP server.",
+    "Application/authentication reference identifiers are provisional until the shared catalog contract is finalised."
+  ]
+}

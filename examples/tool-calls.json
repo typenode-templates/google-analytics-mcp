@@ -1,0 +1,229 @@
+{
+  "evidence_type": "synthetic",
+  "note": "Invented identifiers/dates; schema examples, not live calls. Replace selections with discovered accessible resources.",
+  "tool_calls": [
+    {
+      "tool": "list_ga4_properties",
+      "arguments": {}
+    },
+    {
+      "tool": "get_ga4_property",
+      "arguments": {
+        "ga4_property_id": "123456789"
+      }
+    },
+    {
+      "tool": "list_ga4_data_streams",
+      "arguments": {
+        "ga4_property_id": "123456789"
+      }
+    },
+    {
+      "tool": "get_ga4_report_metadata",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "kind": "metrics",
+        "search": "key event"
+      }
+    },
+    {
+      "tool": "list_ga4_key_events",
+      "arguments": {
+        "ga4_property_id": "123456789"
+      }
+    },
+    {
+      "tool": "check_ga4_report_compatibility",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "dimensions": [
+          "landingPagePlusQueryString"
+        ],
+        "metrics": [
+          "sessions",
+          "engagementRate"
+        ]
+      }
+    },
+    {
+      "tool": "query_ga4_report",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "dimensions": [
+          "landingPagePlusQueryString"
+        ],
+        "metrics": [
+          "sessions",
+          "engagementRate"
+        ]
+      }
+    },
+    {
+      "tool": "get_ga4_report_totals",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "metrics": [
+          "sessions",
+          "totalUsers"
+        ]
+      }
+    },
+    {
+      "tool": "get_ga4_report_time_series",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "metrics": [
+          "sessions"
+        ],
+        "granularity": "day"
+      }
+    },
+    {
+      "tool": "query_ga4_funnel",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "steps": [
+          {
+            "name": "Signup",
+            "filter_expression": {
+              "funnel_event_filter": {
+                "event_name": "sign_up"
+              }
+            }
+          },
+          {
+            "name": "Activation",
+            "filter_expression": {
+              "funnel_event_filter": {
+                "event_name": "activate_account"
+              }
+            },
+            "within_duration_from_previous": "604800s"
+          }
+        ]
+      }
+    },
+    {
+      "tool": "get_ga4_organic_landing_pages",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30"
+      }
+    },
+    {
+      "tool": "get_ga4_landing_page_outcomes",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "event_names": [
+          "generate_lead"
+        ],
+        "include_key_event_rates": true
+      }
+    },
+    {
+      "tool": "get_ga4_channel_acquisition",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "breakdown": "source_medium"
+      }
+    },
+    {
+      "tool": "get_ga4_first_user_acquisition",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "breakdown": "channel"
+      }
+    },
+    {
+      "tool": "get_ga4_event_performance",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "event_names": [
+          "sign_up",
+          "generate_lead"
+        ]
+      }
+    },
+    {
+      "tool": "get_ga4_audience_breakdown",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "breakdown": "device"
+      }
+    },
+    {
+      "tool": "get_ga4_performance_overview",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "include_channels": true
+      }
+    },
+    {
+      "tool": "get_ga4_period_datasets",
+      "arguments": {
+        "ga4_property_id": "123456789",
+        "periods": [
+          {
+            "label": "previous",
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-31"
+          },
+          {
+            "label": "current",
+            "start_date": "2026-09-01",
+            "end_date": "2026-09-30"
+          }
+        ],
+        "report": {
+          "dimensions": [
+            "landingPagePlusQueryString"
+          ],
+          "metrics": [
+            "sessions",
+            "engagementRate"
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_ga4_property_datasets",
+      "arguments": {
+        "ga4_property_ids": [
+          "123456789",
+          "987654321"
+        ],
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-30",
+        "report": {
+          "dimensions": [
+            "country"
+          ],
+          "metrics": [
+            "sessions"
+          ]
+        }
+      }
+    }
+  ]
+}

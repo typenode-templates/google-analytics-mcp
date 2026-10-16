@@ -1,0 +1,15 @@
+{
+  "tool": "query_ga4_report",
+  "arguments": {
+    "ga4_property_id": "123456789",
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-30",
+    "dimensions": [
+      "landingPagePlusQueryString"
+    ],
+    "metrics": [
+      "sessions",
+      "engagementRate"
+    ]
+  }
+}

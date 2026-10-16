@@ -1,0 +1,98 @@
+{
+  "contract_version": "1.0",
+  "status": "ok",
+  "retrieved_at": "2026-10-06T12:00:00Z",
+  "requests_attempted": 2,
+  "request_usage": {
+    "admin": 0,
+    "metadata": 0,
+    "compatibility": 1,
+    "core": 1,
+    "funnel": 0
+  },
+  "coverage_notes": [],
+  "error": null,
+  "dataset": {
+    "dataset_id": "report",
+    "status": "ok",
+    "retrieved_at": "2026-10-06T12:00:00Z",
+    "effective_request": {
+      "ga4_property_id": "123456789",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-30",
+      "dimensions": [
+        "landingPagePlusQueryString"
+      ],
+      "metrics": [
+        "sessions",
+        "engagementRate"
+      ],
+      "order_by": [
+        {
+          "dimension": {
+            "name": "landingPagePlusQueryString",
+            "order_type": "ALPHANUMERIC"
+          },
+          "descending": false
+        }
+      ],
+      "currency_code": "USD",
+      "keep_empty_rows": false,
+      "return_property_quota": true,
+      "validate_compatibility": true,
+      "metric_aggregations": [],
+      "page_size": 100
+    },
+    "dimension_headers": [
+      {
+        "name": "landingPagePlusQueryString"
+      }
+    ],
+    "metric_headers": [
+      {
+        "name": "sessions",
+        "type": "TYPE_INTEGER"
+      },
+      {
+        "name": "engagementRate",
+        "type": "TYPE_FLOAT"
+      }
+    ],
+    "rows": [
+      {
+        "dimensionValues": [
+          {
+            "value": "/product"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "123"
+          },
+          {
+            "value": "0.7317073170731707"
+          }
+        ]
+      }
+    ],
+    "native_aggregates": {},
+    "source_metadata": {
+      "currencyCode": "USD",
+      "timeZone": "America/New_York",
+      "subjectToThresholding": false
+    },
+    "source_quota": null,
+    "source_fields": {},
+    "pagination": {
+      "source_offset": 0,
+      "source_rows_acquired": 1,
+      "returned_count": 1,
+      "source_row_count": 1,
+      "has_more": false,
+      "next_cursor": null,
+      "continuation_evidence": "source_row_count"
+    },
+    "coverage_notes": [],
+    "error": null
+  }
+}
